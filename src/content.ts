@@ -32,7 +32,7 @@ export const portfolioCategories: PortfolioCategory[] = [
         description: '웹디자인 2년, 웹퍼블리셔 7년의 경험이 있습니다. 실무에서는 JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트 업무 약 2년, React 프론트엔드 약 1년, Next.js 기반 프론트 UI 개발 약 6개월, Vue 3 기반 퍼블리싱 약 1년 6개월의 경험이 있습니다.',
         body: [
           '렌터카 중개 플랫폼 리뉴얼에서는 JavaScript·jQuery·REST API 기반 UI 개발을 진행했고, 크리에이터·라이브 방송 플랫폼에서는 React 기반 프론트 서비스 개발과 유지보수에 참여했습니다. Music Bypass에서는 Next.js 기반 사용자·관리자 페이지의 UI 퍼블리싱과 프론트엔드 개발을 단독으로 담당했습니다.',
-          '최근 농협 ‘오늘의 농사’ 고도화 프로젝트에서는 Vue 3·Element UI 기반 UI/UX 퍼블리싱과 공통 컴포넌트를 구축했으며, 농협 용도품 사이트에서는 프론트 개발자가 활용할 UI 가이드 페이지를 단독 구축했습니다.',
+          '최근 농협 ‘오늘의 농사’ 고도화 프로젝트에서는 Vue 3·Element UI 기반 UI/UX 퍼블리싱과 공통 컴포넌트를 구축했으며, 농협 용도품 사이트에서는 프론트 개발자가 활용할 UI 가이드 페이지를 단독 구축했습니다. 두 프로젝트 모두 내부망 환경에서 AI 도구 없이 직접 코딩했습니다. ‘오늘의 농사’는 웹 접근성 마크를 취득했습니다.',
           '개인 프로젝트 ‘코인주라’는 기획·디자인·개발·운영을 직접 진행하며 SEO와 AI·API 기반 데이터 수집·구조화·콘텐츠 자동화 환경을 구축하고 있습니다.',
         ],
       },
@@ -41,12 +41,12 @@ export const portfolioCategories: PortfolioCategory[] = [
         title: '주요 프로젝트 안내',
         description: '실무와 개인 프로젝트에서 맡은 주요 작업입니다.',
         featuredProjects: [
-          { title: '농협 ‘오늘의 농사’', description: 'Vue 3·Element UI 기반 웹앱 UI/UX 고도화와 공통 컴포넌트 구축', tags: ['Vue 3', 'Element UI', 'UI/UX'] },
+          { title: '농협 ‘오늘의 농사’', description: '내부망에서 AI 도구 없이 Vue 3·Element UI 웹앱 UI/UX 고도화와 공통 컴포넌트 구축. 웹 접근성 마크 취득', tags: ['Vue 3', 'Element UI', 'UI/UX', '웹 접근성'] },
           { title: '코인주라', description: '기획·디자인·개발·운영과 AI·API 기반 데이터·콘텐츠 자동화 구축', tags: ['개인 프로젝트', 'AI·API', '자동화'] },
           { title: '크리에이터·라이브 방송 플랫폼', description: 'React 기반 프론트 서비스 개발 및 유지보수 참여', tags: ['React', '프론트엔드'] },
         ],
         highlights: [
-          '농협 용도품 사이트 Vue 3 기반 Nano Component UI 가이드 및 퍼블리싱 단독 구축',
+          '농협 용도품 사이트 내부망에서 AI 도구 없이 Vue 3 기반 Nano Component UI 가이드 및 퍼블리싱 단독 구축',
           '농협몰 운영·유지보수 및 기존 시스템에 맞춘 UI 개선',
           'Next.js 기반 음악 플랫폼 사용자·관리자 페이지 퍼블리싱 및 프론트 개발 단독 수행',
           'JavaScript·jQuery·REST API 기반 렌트카 중개 플랫폼 리뉴얼',
