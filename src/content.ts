@@ -110,7 +110,6 @@ export const portfolioCategories: PortfolioCategory[] = [
           },
         ],
         highlights: [
-          'React 기반 크리에이터·라이브 방송 플랫폼 개발 및 유지보수 참여',
           'JavaScript·jQuery·REST API 기반 렌트카 중개 플랫폼 리뉴얼',
           'GNUBOARD·YoungCart·Cafe24 기반 병원, 기업, 쇼핑몰, 글로벌 사이트 등 50개 이상 구축',
           'PC·Tablet·Mobile 대응 반응형 웹 및 다국어 글로벌 사이트 제작 경험',
