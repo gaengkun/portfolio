@@ -28,9 +28,20 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
   if (entry.body) {
     return (
       <div className="mt-5 max-w-[47rem] border-l-2 border-[#222] pl-5 sm:pl-7">
-        <p className="text-base font-medium leading-8 text-[#222] sm:text-lg">{entry.lead ?? entry.description}</p>
-        <div className="mt-5 space-y-5 border-t border-[#ddd] pt-4 text-[15px] leading-8 text-[#444]">
+        <div className="space-y-2 text-base font-medium leading-8 text-[#222] sm:text-lg">
+          {entry.intro?.map((line) => <p key={line}>{line}</p>)}
           <p>{entry.description}</p>
+        </div>
+        {entry.experience && (
+          <section className="mt-6 border-t border-[#ddd] pt-5">
+            <h4 className="text-sm font-semibold text-[#222]">기술별 실무 경험</h4>
+            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[15px] leading-7 text-[#444]">
+              {entry.experience.map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          </section>
+        )}
+        <div className="mt-6 space-y-5 border-t border-[#ddd] pt-5 text-[15px] leading-8 text-[#444]">
+          <h4 className="text-sm font-semibold text-[#222]">프로젝트 경험</h4>
           {entry.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       </div>

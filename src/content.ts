@@ -2,7 +2,8 @@ export type PortfolioEntry = {
   id: string
   title: string
   description: string
-  lead?: string
+  intro?: string[]
+  experience?: string[]
   body?: string[]
   skillGroups?: { title: string; items: string[] }[]
   featuredProjects?: { title: string; description: string; tags: string[] }[]
@@ -28,10 +29,21 @@ export const portfolioCategories: PortfolioCategory[] = [
       {
         id: 'about',
         title: '자기소개',
-        lead: '웹디자인과 웹퍼블리싱 경험을 바탕으로 React, Next.js, Vue 3까지 업무 영역을 넓혀왔습니다. UI/UX 구현을 주력으로 하며 API 연동과 컴포넌트 기반 화면 개발을 함께 수행했습니다.',
-        description: '웹디자인 2년, 웹퍼블리셔 7년의 경험이 있습니다. 실무에서는 JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트 업무 약 2년, React 프론트엔드 약 1년, Next.js 기반 프론트 UI 개발 약 6개월, Vue 3 기반 퍼블리싱 약 1년 6개월의 경험이 있습니다.',
+        intro: [
+          '웹에이전시에서 커리어를 시작했습니다.',
+          '웹디자인 2년, 웹퍼블리셔 7년의 경험이 있습니다.',
+        ],
+        description: '총 경력 14년 동안 퍼블리싱 업무를 계속하며 프론트엔드 개발도 병행했습니다.',
+        experience: [
+          'JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트엔드 업무 약 2년',
+          'React 프론트엔드 개발 1년',
+          'Next.js 기반 프론트 UI 개발 약 6개월',
+          'Vue 3 기반 퍼블리싱 약 1년 6개월',
+        ],
         body: [
-          '렌터카 중개 플랫폼 리뉴얼에서는 JavaScript·jQuery·REST API 기반 UI 개발을 진행했고, 크리에이터·라이브 방송 플랫폼에서는 React 기반 프론트 서비스 개발과 유지보수에 참여했습니다. Music Bypass에서는 Next.js 기반 사용자·관리자 페이지의 UI 퍼블리싱과 프론트엔드 개발을 단독으로 담당했습니다.',
+          '렌터카 중개 플랫폼 리뉴얼에서는 JavaScript·jQuery·REST API 기반 UI 개발을 진행했습니다.',
+          '크리에이터·라이브 방송 플랫폼에서는 React 기반 프론트 서비스 개발과 유지보수에 참여했습니다.',
+          'Music Bypass(뮤직바이페스)에서는 6개월 동안 Next.js 기반 사용자·관리자 페이지의 웹 퍼블리싱과 프론트엔드 개발 전 과정을 단독으로 담당했습니다. UI/UX를 재사용 가능한 컴포넌트로 구성하고 REST API 연동, 액세스 토큰 적용, 결제 페이지 적용을 진행했습니다.',
           '최근 농협 ‘오늘의 농사’ 고도화 프로젝트에서는 Vue 3·Element UI 기반 UI/UX 퍼블리싱과 공통 컴포넌트를 구축했으며, 농협 용도품 사이트에서는 프론트 개발자가 활용할 UI 가이드 페이지를 단독 구축했습니다. 두 프로젝트 모두 내부망 환경에서 AI 도구 없이 직접 코딩했습니다. ‘오늘의 농사’는 웹 접근성 마크를 취득했습니다.',
           '개인 프로젝트 ‘코인주라’는 기획·디자인·개발·운영을 직접 진행하며 SEO와 AI·API 기반 데이터 수집·구조화·콘텐츠 자동화 환경을 구축하고 있습니다.',
         ],
