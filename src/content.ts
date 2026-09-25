@@ -47,7 +47,7 @@ export const portfolioCategories: PortfolioCategory[] = [
         ],
         highlights: [
           '농협 용도품 사이트 Vue 3 기반 Nano Component UI 가이드 및 퍼블리싱 단독 구축',
-          '대기업 웹서비스 운영·유지보수 및 기존 시스템에 맞춘 UI 개선',
+          '농협몰 운영·유지보수 및 기존 시스템에 맞춘 UI 개선',
           'Next.js 기반 음악 플랫폼 사용자·관리자 페이지 퍼블리싱 및 프론트 개발 단독 수행',
           'JavaScript·jQuery·REST API 기반 렌트카 중개 플랫폼 리뉴얼',
           'GNUBOARD·YoungCart·Cafe24 기반 병원, 기업, 쇼핑몰, 글로벌 사이트 등 50개 이상 구축',
