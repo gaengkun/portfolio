@@ -29,13 +29,10 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
     return (
       <div className="mt-5 max-w-[47rem] border-l-2 border-[#222] pl-5 sm:pl-7">
         <p className="text-base font-medium leading-8 text-[#222] sm:text-lg">{entry.lead ?? entry.description}</p>
-        <details className="mt-5 border-t border-[#ddd] pt-4">
-          <summary className="w-fit cursor-pointer text-sm font-semibold text-[#444] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222]">경력 자세히 읽기</summary>
-          <div className="mt-5 space-y-5 text-[15px] leading-8 text-[#444]">
-            <p>{entry.description}</p>
-            {entry.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </details>
+        <div className="mt-5 space-y-5 border-t border-[#ddd] pt-4 text-[15px] leading-8 text-[#444]">
+          <p>{entry.description}</p>
+          {entry.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
       </div>
     )
   }
