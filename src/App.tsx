@@ -55,6 +55,11 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
           <section key={project.title} className="border-b border-[#ddd] py-6 sm:py-7">
             <h4 className="text-xl font-semibold tracking-tight text-[#222]">{project.title}</h4>
             <p className="mt-2 text-base leading-7 text-[#555]">{project.description}</p>
+            {project.details && (
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-[#555]">
+                {project.details.map((detail) => <li key={detail}>{detail}</li>)}
+              </ul>
+            )}
             <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.title} 기술과 역할`}>
               {project.tags.map((tag) => <li key={tag} className="border border-[#ddd] px-2.5 py-1 text-xs text-[#555]">{tag}</li>)}
             </ul>

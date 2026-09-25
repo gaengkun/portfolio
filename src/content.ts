@@ -6,7 +6,7 @@ export type PortfolioEntry = {
   experience?: string[]
   body?: string[]
   skillGroups?: { title: string; items: string[] }[]
-  featuredProjects?: { title: string; description: string; tags: string[] }[]
+  featuredProjects?: { title: string; description: string; tags: string[]; details?: string[] }[]
   highlights?: string[]
   image?: string
   component?: 'tailwind' | 'date-picker' | 'zustand'
@@ -53,8 +53,18 @@ export const portfolioCategories: PortfolioCategory[] = [
         title: '주요 프로젝트 안내',
         description: '실무와 개인 프로젝트에서 맡은 주요 작업입니다.',
         featuredProjects: [
-          { title: '농협 ‘오늘의 농사’', description: '내부망에서 AI 도구 없이 Vue 3·Element UI 웹앱 UI/UX 고도화와 공통 컴포넌트 구축. 웹 접근성 마크 취득', tags: ['Vue 3', 'Element UI', 'UI/UX', '웹 접근성'] },
-          { title: '코인주라', description: '기획·디자인·개발·운영과 AI·API 기반 데이터·콘텐츠 자동화 구축', tags: ['개인 프로젝트', 'AI·API', '자동화'] },
+          { title: '농협 ‘오늘의 농사’', description: '내부망에서 AI 도구 없이 Vue 3·Element UI를 커스텀해 웹앱 UI/UX를 고도화하고 공통 컴포넌트를 구축했습니다. 웹 접근성 마크를 취득했습니다.', tags: ['Vue 3', 'Element UI', 'UI/UX', '웹 접근성'] },
+          {
+            title: '코인주라',
+            description: '기획·디자인·개발·운영을 직접 맡아 거래소 데이터와 AI를 연결한 콘텐츠 자동화 환경을 만들고 있습니다.',
+            tags: ['개인 프로젝트', '거래소 API', 'Python', 'AI 자동화'],
+            details: [
+              '기존 시세 정보에 더해 이용자가 필요한 차트·통계·상세 정보를 볼 수 있도록 거래소 API를 활용했습니다.',
+              '시세·차트·통계 데이터를 cron으로 자동 수집해 JSON으로 저장하고, 수집 데이터를 단계별 JSON으로 구성해 데이터 품질을 개선하고 있습니다.',
+              '외부 자료를 Python으로 매일 수집하며, AI API로 이용자에게 필요한 콘텐츠를 생성하는 흐름과 콘텐츠 품질·처리 성능을 개선 중입니다.',
+              'Windows·Mac에서 시세를 볼 수 있는 위젯을 기획하고 AI 도구를 활용해 개발했습니다. Windows 개발자 등록 후 Microsoft Store에 위젯을 등록해 설치 경로를 마련했고, Mac은 DMG 다운로드를 제공합니다. 직접 배포 때의 보안 경고를 줄이고 사용자 신뢰를 높이기 위해 배포 방식을 정리했습니다.',
+            ],
+          },
           { title: '크리에이터·라이브 방송 플랫폼', description: 'React 기반 프론트 서비스 개발 및 유지보수 참여', tags: ['React', '프론트엔드'] },
         ],
         highlights: [

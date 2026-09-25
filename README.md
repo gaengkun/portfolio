@@ -29,7 +29,7 @@ npm run dev
 
 기술을 그룹별 목록으로 보여주려면 `skillGroups`에 `{ title, items }`를 추가합니다. `MY > 스킬`이 예시이며 이 항목에도 상세 링크와 More가 표시되지 않습니다.
 
-대표 프로젝트를 강조하려면 `featuredProjects`에 제목·설명·태그를 넣고, 나머지 경력은 `highlights`에 추가합니다. `MY > 주요 프로젝트 안내`가 예시입니다.
+대표 프로젝트를 강조하려면 `featuredProjects`에 제목·설명·태그와 필요할 때 `details` 문장 목록을 넣고, 나머지 경력은 `highlights`에 추가합니다. `MY > 주요 프로젝트 안내`가 예시입니다.
 
 이미지를 보이려면 같은 항목에 `image: 'images/work-preview.webp'`를 추가하고 파일을 `public/images/`에 넣습니다. 이미지는 목록에 바로 표시됩니다.
 
