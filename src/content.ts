@@ -77,6 +77,16 @@ export const portfolioCategories: PortfolioCategory[] = [
             ],
           },
           {
+            title: '농협몰',
+            description: '농협몰 운영·유지보수에서 기존 레거시 소스에 맞춰 화면을 퍼블리싱했습니다.',
+            tags: ['운영·유지보수', '레거시 퍼블리싱', '리뷰 API', '이벤트 슬라이드'],
+            details: [
+              '복잡한 기존 환경에서도 스타일·스크립트 충돌이나 다른 페이지에 미치는 영향이 없도록 작업했습니다.',
+              '각 페이지의 리뷰 데이터를 API로 받아 별점을 표시했습니다.',
+              '이벤트용 스와이프 슬라이드의 디자인과 동작을 커스텀했습니다.',
+            ],
+          },
+          {
             title: '코인주라',
             description: '기획·디자인·개발·운영을 직접 맡아 거래소 데이터와 AI를 연결한 콘텐츠 자동화 환경을 만들고 있습니다.',
             tags: ['개인 프로젝트', '거래소 API', 'Python', 'AI 자동화'],
@@ -100,7 +110,6 @@ export const portfolioCategories: PortfolioCategory[] = [
           },
         ],
         highlights: [
-          '농협몰 운영·유지보수 및 기존 시스템에 맞춘 UI 개선',
           'React 기반 크리에이터·라이브 방송 플랫폼 개발 및 유지보수 참여',
           'JavaScript·jQuery·REST API 기반 렌트카 중개 플랫폼 리뉴얼',
           'GNUBOARD·YoungCart·Cafe24 기반 병원, 기업, 쇼핑몰, 글로벌 사이트 등 50개 이상 구축',
