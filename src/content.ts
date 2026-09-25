@@ -4,7 +4,6 @@ export type PortfolioEntry = {
   description: string
   intro?: string[]
   experience?: string[]
-  body?: string[]
   skillGroups?: { title: string; items: string[] }[]
   featuredProjects?: { title: string; description: string; tags: string[]; details?: string[] }[]
   highlights?: string[]
@@ -39,13 +38,6 @@ export const portfolioCategories: PortfolioCategory[] = [
           'React 프론트엔드 개발 1년',
           'Next.js 기반 프론트 UI 개발 약 6개월',
           'Vue 3 기반 퍼블리싱 약 1년 6개월',
-        ],
-        body: [
-          '렌터카 중개 플랫폼 리뉴얼에서는 JavaScript·jQuery·REST API 기반 UI 개발을 진행했습니다.',
-          '크리에이터·라이브 방송 플랫폼에서는 React 기반 프론트 서비스 개발과 유지보수에 참여했습니다.',
-          '뮤직바이페스(Music Bypass)에서는 6개월 동안 Next.js 기반 사용자·관리자 화면의 웹 퍼블리싱과 프론트엔드 개발 전체를 혼자 담당했습니다. 버튼·셀렉트 등 기본 UI를 컴포넌트화하고 Tailwind CSS로 스타일링했으며, REST API 연동과 액세스 토큰 로그인·아임포트 결제 연동·음악 플레이어를 구현했습니다. 반응형 화면과 하단 공통 플레이어의 전역 상태를 Zustand로 관리했습니다.',
-          '최근 농협 ‘오늘의 농사’ 고도화 프로젝트에서는 Vue 3·Element UI 기반 UI/UX 퍼블리싱과 공통 컴포넌트를 구축했으며, 농협 용도품 사이트에서는 프론트 개발자가 활용할 UI 가이드 페이지를 단독 구축했습니다. 두 프로젝트 모두 내부망 환경에서 AI 도구 없이 직접 코딩했습니다. ‘오늘의 농사’는 웹 접근성 마크를 취득했습니다.',
-          '개인 프로젝트 ‘코인주라’는 기획·디자인·개발·운영을 직접 진행하며 SEO와 AI·API 기반 데이터 수집·구조화·콘텐츠 자동화 환경을 구축하고 있습니다.',
         ],
       },
       {
@@ -202,7 +194,7 @@ export const portfolioCategories: PortfolioCategory[] = [
 ]
 
 export function isPortfolioEntryVisible(entry: PortfolioEntry) {
-  return Boolean(entry.component || entry.body || entry.skillGroups || entry.featuredProjects || entry.highlights || entry.image || entry.points?.length)
+  return Boolean(entry.component || entry.intro || entry.skillGroups || entry.featuredProjects || entry.highlights || entry.image || entry.points?.length)
 }
 
 export function findPortfolioEntry(id: string) {

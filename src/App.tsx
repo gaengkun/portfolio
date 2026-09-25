@@ -25,7 +25,7 @@ function imageHref(image: string) {
 }
 
 function EntryContent({ entry }: { entry: PortfolioEntry }) {
-  if (entry.body) {
+  if (entry.intro) {
     return (
       <div className="mt-5 max-w-[47rem] border-l-2 border-[#222] pl-5 sm:pl-7">
         <div className="space-y-2 text-base font-medium leading-8 text-[#222] sm:text-lg">
@@ -40,10 +40,6 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
             </ul>
           </section>
         )}
-        <div className="mt-6 space-y-5 border-t border-[#ddd] pt-5 text-[15px] leading-8 text-[#444]">
-          <h4 className="text-sm font-semibold text-[#222]">프로젝트 경험</h4>
-          {entry.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        </div>
       </div>
     )
   }
