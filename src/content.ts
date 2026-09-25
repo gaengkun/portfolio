@@ -53,7 +53,18 @@ export const portfolioCategories: PortfolioCategory[] = [
         title: '주요 프로젝트 안내',
         description: '실무와 개인 프로젝트에서 맡은 주요 작업입니다.',
         featuredProjects: [
-          { title: '농협 ‘오늘의 농사’', description: '내부망에서 AI 도구 없이 Vue 3·Element UI를 커스텀해 웹앱 UI/UX를 고도화하고 공통 컴포넌트를 구축했습니다. 웹 접근성 마크를 취득했습니다.', tags: ['Vue 3', 'Element UI', 'UI/UX', '웹 접근성'] },
+          {
+            title: '농협 ‘오늘의 농사’',
+            description: '내부망에서 AI 도구 없이 진행한 Vue 3·Element UI 웹앱 UI/UX 고도화 프로젝트입니다. 웹 접근성 마크를 취득했습니다.',
+            tags: ['Vue 3', 'Element UI', 'SVN', '웹 접근성'],
+            details: [
+              '웹퍼블리셔 6명이 참여한 팀에서 SVN으로 소스를 관리하며 화면 작업을 진행했습니다.',
+              '개발자가 사용할 수 있는 UI/UX 가이드 페이지와 공통 컴포넌트를 만들고, Element UI 컴포넌트의 디자인과 동작을 커스텀했습니다.',
+              '날짜 선택기(Date Picker)의 디자인과 기능을 커스텀했습니다.',
+              '차트 라이브러리의 디자인과 기능을 화면 목적에 맞게 커스텀했습니다.',
+              '작게·보통·크게 글씨 크기 전환 기능을 적용했습니다.',
+            ],
+          },
           {
             title: '코인주라',
             description: '기획·디자인·개발·운영을 직접 맡아 거래소 데이터와 AI를 연결한 콘텐츠 자동화 환경을 만들고 있습니다.',
