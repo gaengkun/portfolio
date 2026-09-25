@@ -66,6 +66,17 @@ export const portfolioCategories: PortfolioCategory[] = [
             ],
           },
           {
+            title: '농협 용도품',
+            description: '1개월 동안 Vue 3·Element UI 기반 사이트의 퍼블리싱 전 과정을 혼자 담당했습니다. 내부망에서 AI 도구 없이 작업했습니다.',
+            tags: ['Vue 3', 'Element UI', 'UI 가이드', '단독 퍼블리싱'],
+            details: [
+              '개발자 8명·기획자 2명과 협업하며 퍼블리싱을 전담했습니다.',
+              '개발자가 보고 바로 사용할 수 있도록 Nano Component UI 가이드 페이지를 만들었습니다.',
+              '버튼·셀렉트·텍스트·테이블·입력 필드 등 기본 UI의 사용 예시를 정리했습니다.',
+              'Vue 3 화면에 맞춰 Element UI 컴포넌트의 디자인과 동작을 커스텀했습니다.',
+            ],
+          },
+          {
             title: '코인주라',
             description: '기획·디자인·개발·운영을 직접 맡아 거래소 데이터와 AI를 연결한 콘텐츠 자동화 환경을 만들고 있습니다.',
             tags: ['개인 프로젝트', '거래소 API', 'Python', 'AI 자동화'],
@@ -89,7 +100,6 @@ export const portfolioCategories: PortfolioCategory[] = [
           },
         ],
         highlights: [
-          '농협 용도품 사이트 내부망에서 AI 도구 없이 Vue 3 기반 Nano Component UI 가이드 및 퍼블리싱 단독 구축',
           '농협몰 운영·유지보수 및 기존 시스템에 맞춘 UI 개선',
           'React 기반 크리에이터·라이브 방송 플랫폼 개발 및 유지보수 참여',
           'JavaScript·jQuery·REST API 기반 렌트카 중개 플랫폼 리뉴얼',
