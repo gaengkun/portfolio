@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  color: #222;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.pf-shell { background: #fff; }
+.pf-heading { font-family: "Arial", "Noto Sans KR", "Malgun Gothic", sans-serif; font-weight: 700; }
+.pf-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+.pf-work-row { transition: background-color 150ms ease; }
+.pf-work-row:hover { background: #f5f5f5; }
+.pf-work-link:hover, .pf-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pf-top-nav { scrollbar-width: none; }
+.pf-top-nav::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pf-work-row { transition: none; }
+}
