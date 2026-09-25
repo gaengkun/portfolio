@@ -17,7 +17,7 @@ export default function DatePickerDemo() {
           <button type="button" onClick={() => setDate(dateInput.current?.value ?? '')} className="mt-3 min-h-10 rounded-lg bg-[#222] px-4 text-xs font-semibold text-white hover:bg-[#444] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#222]">요청값 확인</button>
           <p className="mt-3 text-xs leading-5 text-[#666]">날짜를 선택하고 요청에 들어갈 값을 확인해 보세요.</p>
         </div>
-        <div className="rounded-xl bg-[#222] p-5 text-[#fff]" aria-live="polite">
+        <div className="bg-[#222] p-5 text-[#fff]" aria-live="polite">
           <p className="pf-mono text-[10px] uppercase tracking-[0.15em] text-[#bbb]">Request preview</p>
           <p className="pf-mono mt-5 break-all text-xs leading-6"><span className="text-[#fff]">GET</span> /api/records{date ? `?date=${encodeURIComponent(date)}` : '?date=YYYY-MM-DD'}</p>
           <p className="mt-5 text-xs text-[#ccc]">{date ? `선택한 날짜: ${date}` : '조회할 날짜를 선택해 주세요.'}</p>

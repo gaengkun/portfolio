@@ -13,7 +13,7 @@ export default function TailwindDemo() {
         <button type="button" aria-pressed={dark} onClick={() => setDark((value) => !value)} className="rounded-full border border-[#ddd] px-4 py-2 text-xs font-semibold text-[#222] transition-colors hover:bg-[#f5f5f5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#222]">{dark ? '라이트 모드 보기' : '다크 모드 보기'}</button>
       </div>
       <div className={`p-5 transition-colors sm:p-7 ${dark ? 'bg-[#222] text-[#fff]' : 'bg-[#f7f7f7] text-[#222]'}`}>
-        <div className={`rounded-xl border p-5 sm:p-7 ${dark ? 'border-[#555] bg-[#303030]' : 'border-[#ddd] bg-white'}`}>
+        <div className={`border p-5 sm:p-7 ${dark ? 'border-[#555] bg-[#303030]' : 'border-[#ddd] bg-white'}`}>
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className={`pf-mono text-[10px] uppercase tracking-[0.15em] ${dark ? 'text-[#bbb]' : 'text-[#666]'}`}>Project / 01</p>

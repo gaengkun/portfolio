@@ -66,12 +66,12 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
 
   if (entry.skillGroups) {
     return (
-      <div className="mt-5 max-w-[64rem] space-y-6 border border-[#e5e5e5] bg-white p-5 sm:p-7">
+      <div className="mt-6 grid gap-8 md:grid-cols-3 md:gap-10">
         {entry.skillGroups.map((group) => (
           <section key={group.title} aria-label={group.title}>
-            <h4 className="text-sm font-semibold text-[#222]">{group.title}</h4>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {group.items.map((item) => <li key={item} className="border border-[#ddd] bg-[#f7f7f7] px-3 py-1.5 text-sm leading-5 text-[#222]">{item}</li>)}
+            <h4 className="border-b-2 border-[#222] pb-3 text-base font-semibold text-[#222]">{group.title}</h4>
+            <ul className="grid gap-x-5 sm:grid-cols-2 md:grid-cols-1">
+              {group.items.map((item) => <li key={item} className="border-b border-[#e5e5e5] py-2.5 text-[15px] leading-6 text-[#333]">{item}</li>)}
             </ul>
           </section>
         ))}

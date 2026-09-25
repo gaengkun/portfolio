@@ -35,7 +35,7 @@ function Controls() {
   const reset = useCounter((state) => state.reset)
 
   return (
-    <div className="rounded-xl border border-[#ddd] bg-white p-5">
+    <div className="border border-[#ddd] bg-white p-5">
       <p className="pf-mono text-[10px] uppercase tracking-[0.12em] text-[#666]">컴포넌트 A · 조작</p>
       <div className="mt-5 flex gap-2">
         <button type="button" onClick={add} className="min-h-10 rounded-full bg-[#222] px-5 text-sm font-semibold text-white hover:bg-[#444] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#222]">+1</button>
@@ -49,7 +49,7 @@ function Display() {
   const count = useCounter((state) => state.count)
 
   return (
-    <div className="rounded-xl border border-[#ddd] bg-white p-5" aria-live="polite" aria-atomic="true">
+    <div className="border border-[#ddd] bg-white p-5" aria-live="polite" aria-atomic="true">
       <p className="pf-mono text-[10px] uppercase tracking-[0.12em] text-[#666]">컴포넌트 B · 표시</p>
       <p className="mt-3 text-4xl font-semibold tabular-nums text-[#222]">{count}</p>
     </div>
