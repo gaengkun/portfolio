@@ -2,8 +2,10 @@ export type PortfolioEntry = {
   id: string
   title: string
   description: string
+  lead?: string
   body?: string[]
   skillGroups?: { title: string; items: string[] }[]
+  featuredProjects?: { title: string; description: string; tags: string[] }[]
   highlights?: string[]
   image?: string
   component?: 'tailwind' | 'date-picker' | 'zustand'
@@ -26,11 +28,30 @@ export const portfolioCategories: PortfolioCategory[] = [
       {
         id: 'about',
         title: '자기소개',
-        description: '웹디자인 2년, 웹퍼블리셔 7년의 경험을 바탕으로 JavaScript·jQuery를 거쳐 React, Next.js, Vue 3 환경까지 업무 영역을 확장해왔습니다. 실무에서는 JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트 업무 약 2년, React 프론트엔드 약 1년, Next.js 기반 프론트 UI 개발 약 6개월, Vue 3 기반 퍼블리싱 약 1년 6개월의 경험이 있습니다. UI/UX 구현과 퍼블리싱을 주력으로 하며 REST API 연동, 상태관리, 컴포넌트 기반 UI 개발 등 프론트 업무를 함께 수행했습니다.',
+        lead: '웹디자인과 웹퍼블리싱 경험을 바탕으로 React, Next.js, Vue 3까지 업무 영역을 넓혀왔습니다. UI/UX 구현을 주력으로 하며 API 연동과 컴포넌트 기반 화면 개발을 함께 수행했습니다.',
+        description: '웹디자인 2년, 웹퍼블리셔 7년의 경험이 있습니다. 실무에서는 JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트 업무 약 2년, React 프론트엔드 약 1년, Next.js 기반 프론트 UI 개발 약 6개월, Vue 3 기반 퍼블리싱 약 1년 6개월의 경험이 있습니다.',
         body: [
           '렌터카 중개 플랫폼 리뉴얼에서는 JavaScript·jQuery·REST API 기반 UI 개발을 진행했고, 크리에이터·라이브 방송 플랫폼에서는 React 기반 프론트 서비스 개발과 유지보수에 참여했습니다. Music Bypass에서는 Next.js 기반 사용자·관리자 페이지의 UI 퍼블리싱과 프론트엔드 개발을 단독으로 담당했습니다.',
           '최근 농협 ‘오늘의 농사’ 고도화 프로젝트에서는 Vue 3·Element UI 기반 UI/UX 퍼블리싱과 공통 컴포넌트를 구축했으며, 농협 용도품 사이트에서는 프론트 개발자가 활용할 UI 가이드 페이지를 단독 구축했습니다.',
           '개인 프로젝트 ‘코인주라’는 기획·디자인·개발·운영을 직접 진행하며 SEO와 AI·API 기반 데이터 수집·구조화·콘텐츠 자동화 환경을 구축하고 있습니다.',
+        ],
+      },
+      {
+        id: 'major-projects',
+        title: '주요 프로젝트 안내',
+        description: '실무와 개인 프로젝트에서 맡은 주요 작업입니다.',
+        featuredProjects: [
+          { title: '농협 ‘오늘의 농사’', description: 'Vue 3·Element UI 기반 웹앱 UI/UX 고도화와 공통 컴포넌트 구축', tags: ['Vue 3', 'Element UI', 'UI/UX'] },
+          { title: '코인주라', description: '기획·디자인·개발·운영과 AI·API 기반 데이터·콘텐츠 자동화 구축', tags: ['개인 프로젝트', 'AI·API', '자동화'] },
+          { title: '크리에이터·라이브 방송 플랫폼', description: 'React 기반 프론트 서비스 개발 및 유지보수 참여', tags: ['React', '프론트엔드'] },
+        ],
+        highlights: [
+          '농협 용도품 사이트 Vue 3 기반 Nano Component UI 가이드 및 퍼블리싱 단독 구축',
+          '대기업 웹서비스 운영·유지보수 및 기존 시스템에 맞춘 UI 개선',
+          'Next.js 기반 음악 플랫폼 사용자·관리자 페이지 퍼블리싱 및 프론트 개발 단독 수행',
+          'JavaScript·jQuery·REST API 기반 렌트카 중개 플랫폼 리뉴얼',
+          'GNUBOARD·YoungCart·Cafe24 기반 병원, 기업, 쇼핑몰, 글로벌 사이트 등 50개 이상 구축',
+          'PC·Tablet·Mobile 대응 반응형 웹 및 다국어 글로벌 사이트 제작 경험',
         ],
       },
       {
@@ -41,22 +62,6 @@ export const portfolioCategories: PortfolioCategory[] = [
           { title: 'Frontend', items: ['React', 'Next.js', 'Vue 3', 'JavaScript', 'TypeScript', 'jQuery', 'REST API', 'Zustand', 'Git'] },
           { title: 'Publishing', items: ['HTML5', 'CSS3', 'SCSS', 'Tailwind CSS', 'styled-components', 'BEM', 'Bootstrap', 'Element UI'] },
           { title: 'Tools', items: ['Figma', 'Photoshop', 'Adobe XD', 'Zeplin', 'VS Code', 'Eclipse', 'Jenkins', 'Jira', 'FileZilla'] },
-        ],
-      },
-      {
-        id: 'major-projects',
-        title: '주요 프로젝트 안내',
-        description: '실무와 개인 프로젝트에서 맡은 주요 작업입니다.',
-        highlights: [
-          '농협 ‘오늘의 농사’ Vue 3·Element UI 기반 웹앱 UI/UX 고도화 및 공통 컴포넌트 구축',
-          '농협 용도품 사이트 Vue 3 기반 Nano Component UI 가이드 및 퍼블리싱 단독 구축',
-          '대기업 웹서비스 운영·유지보수 및 기존 시스템에 맞춘 UI 개선',
-          'Next.js 기반 음악 플랫폼 사용자·관리자 페이지 퍼블리싱 및 프론트 개발 단독 수행',
-          'JavaScript·jQuery·REST API 기반 렌트카 중개 플랫폼 리뉴얼',
-          'React 기반 크리에이터·라이브 방송 플랫폼 개발 및 유지보수 참여',
-          'GNUBOARD·YoungCart·Cafe24 기반 병원, 기업, 쇼핑몰, 글로벌 사이트 등 50개 이상 구축',
-          'PC·Tablet·Mobile 대응 반응형 웹 및 다국어 글로벌 사이트 제작 경험',
-          '개인 프로젝트 ‘코인주라’ 기획·디자인·개발·운영 및 AI·API 기반 데이터·콘텐츠 자동화 구축',
         ],
       },
       { id: 'intranet-vue', title: '내부망 Vue 3 퍼블리싱', description: '내부 서비스의 Vue 3 화면 작업과 협업 방식을 소개합니다.' },
@@ -135,10 +140,14 @@ export const portfolioCategories: PortfolioCategory[] = [
   },
 ]
 
+export function isPortfolioEntryVisible(entry: PortfolioEntry) {
+  return Boolean(entry.component || entry.body || entry.skillGroups || entry.featuredProjects || entry.highlights || entry.image || entry.points?.length)
+}
+
 export function findPortfolioEntry(id: string) {
   for (const category of portfolioCategories) {
     const entry = category.entries.find((candidate) => candidate.id === id)
-    if (entry && !entry.component && !entry.body && !entry.skillGroups && !entry.highlights) return { category, entry }
+    if (entry?.points?.length) return { category, entry }
   }
   return undefined
 }
