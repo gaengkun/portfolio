@@ -23,7 +23,7 @@ export const portfolioCategories: PortfolioCategory[] = [
   {
     id: 'my',
     title: 'MY',
-    description: '어떤 일을 해왔고, 문제를 어떻게 풀어왔는지 소개합니다.',
+    description: '어떤 일을 해왔고 어떤 스킬을 보유했는지 소개합니다.',
     entries: [
       {
         id: 'about',
