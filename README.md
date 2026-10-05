@@ -41,4 +41,4 @@ npm run dev
 
 컴포넌트를 바로 보이려면 `src/demos/`에 React 컴포넌트를 만들고 [`src/App.tsx`](src/App.tsx)의 `demoComponents`에 연결한 뒤, 항목에 `component` 값을 지정합니다. `tailwind`, `date-picker`, `zustand`가 예시입니다. 컴포넌트 항목에는 More 링크가 표시되지 않습니다. Zustand 예시의 코드는 `prism-react-renderer`로 표시합니다.
 
-제목과 설명만 있는 초안 항목과 내용이 없는 카테고리는 공개 화면에서 숨깁니다. `points`, `body`, `skillGroups`, `featuredProjects`, `highlights`, `image`, `component` 중 하나를 추가하면 표시됩니다. `id`는 전체 항목에서 중복되지 않아야 합니다. 확인되지 않은 작업별 역할·성과는 실제 자료에 맞춰 작성하세요. `메인 구성`의 이미지는 실제 작업 화면이 아닌 구성 방식 예시입니다.
+제목과 설명만 있는 초안 항목과 내용이 없는 카테고리는 공개 화면에서 숨깁니다. `points`, `body`, `skillGroups`, `featuredProjects`, `highlights`, `image`, `component` 중 하나를 추가하면 표시됩니다. `id`는 전체 항목에서 중복되지 않아야 합니다. 확인되지 않은 작업별 역할·성과는 실제 자료에 맞춰 작성하세요.

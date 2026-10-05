@@ -32,7 +32,7 @@ export const portfolioCategories: PortfolioCategory[] = [
           '웹에이전시에서 커리어를 시작했습니다.',
           '웹디자인 2년, 웹퍼블리셔 7년의 경험이 있습니다.',
         ],
-        description: '프론트개발을 후 5년 동안은 퍼블리싱 업무를 계속하며 프론트엔드 개발도 병행했습니다.',
+        description: '최근 5년 동안은 퍼블리싱 업무와 프론트엔드 개발을 병행했습니다.',
         experience: [
           'JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트엔드 업무 약 2년',
           'React 프론트엔드 개발 1년',
@@ -80,13 +80,13 @@ export const portfolioCategories: PortfolioCategory[] = [
           },
           {
             title: '코인주라',
-            description: '기획·디자인·개발·운영을 직접 맡아 거래소 데이터와 AI를 연결한 콘텐츠 자동화 환경을 만들고 있습니다.',
+            description: '거래소 API를 사용자 화면에 연결하고, 데이터 수집과 콘텐츠 자동화 기능을 개발·운영하고 있습니다.',
             tags: ['개인 프로젝트', '거래소 API', 'Python', 'AI 자동화'],
             details: [
               '기존 시세 정보에 더해 이용자가 필요한 차트·통계·상세 정보를 볼 수 있도록 거래소 API를 활용했습니다.',
               '시세·차트·통계 데이터를 cron으로 자동 수집해 JSON으로 저장하고, 수집 데이터를 단계별 JSON으로 구성해 데이터 품질을 개선하고 있습니다.',
               '외부 자료를 Python으로 매일 수집하며, AI API로 이용자에게 필요한 콘텐츠를 생성하는 흐름과 콘텐츠 품질·처리 성능을 개선 중입니다.',
-              'Windows·Mac에서 시세를 볼 수 있는 위젯을 기획하고 AI 도구를 활용해 개발했습니다. Windows 개발자 등록 후 Microsoft Store에 위젯을 등록해 설치 경로를 마련했고, Mac은 DMG 다운로드를 제공합니다. 직접 배포 때의 보안 경고를 줄이고 사용자 신뢰를 높이기 위해 배포 방식을 정리했습니다.',
+              'Windows·Mac에서 시세를 볼 수 있는 위젯을 AI 도구를 활용해 개발했습니다. Windows 개발자 등록 후 Microsoft Store에 위젯을 등록해 설치 경로를 마련했고, Mac은 DMG 다운로드를 제공합니다. 직접 배포 때의 보안 경고를 줄이고 사용자 신뢰를 높이기 위해 배포 방식을 정리했습니다.',
             ],
           },
           {
@@ -157,15 +157,6 @@ export const portfolioCategories: PortfolioCategory[] = [
     title: '백엔드',
     description: '서비스의 데이터와 서버 흐름을 다룬 작업을 이곳에 추가합니다.',
     entries: [],
-  },
-  {
-    id: 'planning',
-    title: '기획력',
-    description: '화면을 만들기 전, 어떤 정보를 어떤 순서로 보여줄지 정한 과정입니다.',
-    entries: [
-      { id: 'coin-price-pages', title: '코인 시세 서브페이지', description: '시세 정보를 찾고 비교하는 흐름을 페이지 단위로 정리합니다.' },
-      { id: 'main-structure', title: '메인 구성', description: '첫 화면의 정보 우선순위와 이동 경로를 설계한 과정을 소개합니다. 아래 이미지는 구성 방식의 예시입니다.', image: 'images/main-structure.svg' },
-    ],
   },
   {
     id: 'ai-ax',

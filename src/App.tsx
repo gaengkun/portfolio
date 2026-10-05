@@ -140,8 +140,8 @@ function IndexPage() {
       <main id="top" className="mx-auto max-w-[1440px] px-6 pb-24 sm:px-10 lg:px-14">
         <div className="pb-16 pt-14 sm:pb-20 sm:pt-20 lg:pb-24 lg:pt-24">
           <p className="pf-mono mb-6 text-xs font-semibold tracking-[0.12em] text-[#222]">웹 퍼블리셔 · 프론트엔드 개발자</p>
-          <h1 className="pf-heading max-w-[58rem] text-[clamp(3.2rem,7vw,6rem)] leading-[1.08] tracking-[-0.07em]">일을 읽고,<br />화면을 만들다<span className="text-[#222]">.</span></h1>
-          <p className="mt-7 max-w-[42rem] text-base leading-8 text-[#555] sm:text-lg">웹 서비스 운영과 UI 구축, 개인 프로젝트의 AI·API 자동화 경험을 정리했습니다.</p>
+          <h1 className="pf-heading max-w-[58rem] text-[clamp(3.2rem,7vw,6rem)] leading-[1.08] tracking-[-0.07em]">화면을 만들고,<br />기능을 연결하다<span className="text-[#222]">.</span></h1>
+          <p className="mt-7 max-w-[42rem] text-base leading-8 text-[#555] sm:text-lg">반응형 웹과 공통 UI 컴포넌트 구축, API 연동과 상태 관리 등 퍼블리싱·프론트엔드 개발 경험을 정리했습니다.</p>
         </div>
 
         <div className="space-y-20 sm:space-y-28">
