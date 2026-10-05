@@ -142,6 +142,10 @@ function IndexPage() {
           <p className="pf-mono mb-6 text-xs font-semibold tracking-[0.12em] text-[#222]">웹 퍼블리셔 · 프론트엔드 개발자</p>
           <h1 className="pf-heading max-w-[58rem] text-[clamp(3.2rem,7vw,6rem)] leading-[1.08] tracking-[-0.07em]">화면을 만들고,<br />기능을 연결하다<span className="text-[#222]">.</span></h1>
           <p className="mt-7 max-w-[42rem] text-base leading-8 text-[#555] sm:text-lg">반응형 웹과 공통 UI 컴포넌트 구축, API 연동과 상태 관리 등 퍼블리싱·프론트엔드 개발 경험을 정리했습니다.</p>
+          <p className="mt-6 max-w-[47rem] border-l-2 border-[#222] pl-4 text-sm leading-7 text-[#555] sm:text-base">
+            <strong className="mb-1 block font-semibold text-[#222]">매일 배우고, 포트폴리오에 기록합니다.</strong>
+            학습과 실무 경험을 되짚으며, 배운 내용을 UI 구현과 코드 예제로 정리해 이 포트폴리오를 꾸준히 업데이트하고 있습니다.
+          </p>
         </div>
 
         <div className="space-y-20 sm:space-y-28">
