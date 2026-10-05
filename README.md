@@ -11,6 +11,12 @@ npm run dev
 
 배포용 빌드는 GitHub에 푸시하기 직전에 `npm run build`로 한 번 확인합니다.
 
+## 배포
+
+`layout-preview` 브랜치를 GitHub에 푸시하면 GitHub Actions가 빌드 검증 후 GitHub Pages에 배포합니다. 빌드가 실패하면 배포하지 않습니다.
+
+배포 주소: https://gaengkun.github.io/portfolio/
+
 ## 목차와 상세 페이지 수정
 
 모든 1차 카테고리와 2차 제목·설명은 [`src/content.ts`](src/content.ts)의 `portfolioCategories`에서 관리합니다. 새 항목은 해당 카테고리의 `entries` 배열에 추가합니다. 상단 메뉴는 각 1차 카테고리로 이동합니다.

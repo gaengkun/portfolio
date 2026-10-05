@@ -32,7 +32,7 @@ export const portfolioCategories: PortfolioCategory[] = [
           '웹에이전시에서 커리어를 시작했습니다.',
           '웹디자인 2년, 웹퍼블리셔 7년의 경험이 있습니다.',
         ],
-        description: '총 경력 14년 동안 퍼블리싱 업무를 계속하며 프론트엔드 개발도 병행했습니다.',
+        description: '프론트개발을 후 5년 동안은 퍼블리싱 업무를 계속하며 프론트엔드 개발도 병행했습니다.',
         experience: [
           'JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트엔드 업무 약 2년',
           'React 프론트엔드 개발 1년',
