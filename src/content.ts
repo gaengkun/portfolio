@@ -130,7 +130,7 @@ export const portfolioCategories: PortfolioCategory[] = [
             title: '(구)달빛라이브 > 달라',
             url: 'https://www.dallalive.com/',
             description: 'React 기반 웹 퍼블리싱과 이벤트 페이지의 프론트엔드 개발을 담당했습니다.',
-            tags: ['React', 'REST API', '이벤트 페이지', 'UI 컴포넌트'],
+            tags: ['React', 'REST API', 'Storybook', '이벤트 페이지', 'UI 컴포넌트'],
             images: [
               { src: 'images/dalla1.png', alt: '달라 모바일 메인 화면과 라이브 방송 목록', width: 374, height: 664 },
               { src: 'images/dalla2.webp', alt: '달라 라디오·영상 방송과 PC 방송 소개', width: 166, height: 296 },
