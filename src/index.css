@@ -22,6 +22,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .pf-top-nav { scrollbar-width: none; }
 .pf-top-nav::-webkit-scrollbar { display: none; }
 
+body:has(.pf-image-viewer[open]) { overflow: hidden; }
+.pf-image-viewer { position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 3.5rem 1rem; border: 0; background: transparent; color: #fff; }
+.pf-image-viewer[open] { display: flex; align-items: center; justify-content: center; }
+.pf-image-viewer::backdrop { background: rgba(0, 0, 0, 0.8); }
+.pf-image-viewer__content { position: relative; max-width: 100%; }
+.pf-image-viewer__image { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(100dvh - 7rem); object-fit: contain; }
+.pf-image-viewer__close { position: absolute; top: -3rem; right: 0; display: grid; width: 2.75rem; height: 2.75rem; place-items: center; border: 0; background: transparent; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
+.pf-image-viewer__close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .pf-work-row { transition: none; }

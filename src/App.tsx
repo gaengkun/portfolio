@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { portfolioCategories, findPortfolioEntry, isPortfolioEntryVisible, type PortfolioCategory, type PortfolioEntry } from './content'
 import DatePickerDemo from './demos/DatePickerDemo'
 import TailwindDemo from './demos/TailwindDemo'
@@ -22,6 +22,32 @@ function workHref(entry: PortfolioEntry) {
 
 function imageHref(image: string) {
   return `${import.meta.env.BASE_URL}${image}`
+}
+
+function PortfolioImage({ src, alt, width, height, aspectRatio, className }: { src: string; alt: string; width?: number; height?: number; aspectRatio?: string; className: string }) {
+  const viewer = useRef<HTMLDialogElement>(null)
+
+  return (
+    <>
+      <button type="button" className="block w-full cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222]" aria-label={`${alt} 원본 보기`} onClick={() => viewer.current?.showModal()}>
+        <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" className={className} style={aspectRatio ? { aspectRatio, objectFit: 'cover', objectPosition: 'top' } : undefined} />
+      </button>
+      <dialog ref={viewer} className="pf-image-viewer" aria-label={`${alt} 원본 이미지`} onClick={(event) => { if (event.target === event.currentTarget) viewer.current?.close() }}>
+        <div className="pf-image-viewer__content">
+          <button type="button" className="pf-image-viewer__close" aria-label="이미지 닫기" onClick={() => viewer.current?.close()}><span aria-hidden="true">×</span></button>
+          <img src={src} alt={alt} loading="lazy" decoding="async" className="pf-image-viewer__image" />
+        </div>
+      </dialog>
+    </>
+  )
+}
+
+function PortfolioGallery({ images, title, aspectRatio }: { images: NonNullable<PortfolioEntry['images']>; title: string; aspectRatio?: string }) {
+  return (
+    <div className={`mt-6 grid items-start gap-3 ${images.length > 3 ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-6' : 'grid-cols-1 sm:grid-cols-3'}`} aria-label={`${title} 프로젝트 이미지`}>
+      {images.map((image) => <PortfolioImage key={image.src} src={imageHref(image.src)} alt={image.alt} width={image.width ?? 810} height={image.height ?? 1440} aspectRatio={aspectRatio} className="h-auto w-full border border-[#e5e5e5]" />)}
+    </div>
+  )
 }
 
 function EntryContent({ entry }: { entry: PortfolioEntry }) {
@@ -49,7 +75,13 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
       <div className="mt-6 max-w-[64rem] border-t border-[#222]">
         {entry.featuredProjects.map((project) => (
           <section key={project.title} className="border-b border-[#ddd] py-6 sm:py-7">
-            <h4 className="text-xl font-semibold tracking-tight text-[#222]">{project.title}</h4>
+            <h4 className="text-xl font-semibold tracking-tight text-[#222]">
+              {project.url ? (
+                <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} 사이트 보기 (새 탭)`} className="inline-flex items-center gap-2 underline decoration-[#aaa] underline-offset-4 hover:decoration-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222]">
+                  {project.title}<span aria-hidden="true" className="text-base">↗</span>
+                </a>
+              ) : project.title}
+            </h4>
             <p className="mt-2 text-base leading-7 text-[#555]">{project.description}</p>
             {project.details && (
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-[#555]">
@@ -59,6 +91,7 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
             <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.title} 기술과 역할`}>
               {project.tags.map((tag) => <li key={tag} className="border border-[#ddd] px-2.5 py-1 text-xs text-[#555]">{tag}</li>)}
             </ul>
+            {project.images && <PortfolioGallery images={project.images} title={project.title} aspectRatio={project.imageAspectRatio} />}
           </section>
         ))}
         {entry.highlights && (
@@ -89,7 +122,12 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
   }
 
   if (entry.highlights) {
-    return <ul className="mt-5 max-w-[64rem] space-y-2 text-sm leading-6 text-[#555]">{entry.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+    return (
+      <>
+        <p className="mt-2 max-w-[64rem] text-sm leading-7 text-[#666]">{entry.description}</p>
+        <ul className="mt-5 max-w-[64rem] list-disc space-y-2 pl-5 text-sm leading-7 text-[#555]">{entry.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+      </>
+    )
   }
 
   return <p className="mt-2 max-w-[42rem] text-sm leading-6 text-[#666]">{entry.description}</p>
@@ -100,20 +138,26 @@ function SectionList({ category }: { category: PortfolioCategory }) {
     <section id={category.id} className="pf-section scroll-mt-32 border-t border-[#d9d9d9] pt-8 sm:pt-12">
       <h2 className="pf-heading text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-[-0.055em]">{category.title}</h2>
       <p className="mt-4 max-w-[40rem] text-sm leading-7 text-[#666] sm:text-base">{category.description}</p>
+      {category.intro && (
+        <div className="mt-6 max-w-[64rem] space-y-3 border-l-2 border-[#222] pl-5 text-sm leading-7 text-[#555] sm:pl-7 sm:text-base sm:leading-8">
+          {category.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
+      )}
       <ul className="mt-10 border-t border-[#e5e5e5]">
           {category.entries.map((entry) => (
             <li key={entry.id} className="pf-work-row border-b border-[#e5e5e5]">
               <article className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 px-4 py-6 sm:gap-x-6 sm:py-7">
                 <div className="min-w-0">
-                  {entry.points?.length ? (
-                    <h3 className="text-lg font-semibold tracking-[-0.035em] sm:text-xl"><a className="pf-work-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222]" href={workHref(entry)} target="_blank" rel="noopener noreferrer">{entry.title}<span className="sr-only"> 상세 보기, 새 탭</span></a></h3>
+                  {entry.points?.length || entry.url ? (
+                    <h3 className="text-lg font-semibold tracking-[-0.035em] sm:text-xl"><a className="pf-work-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222]" href={entry.points?.length ? workHref(entry) : entry.url} target="_blank" rel="noopener noreferrer">{entry.title}{entry.url && !entry.points?.length && <span aria-hidden="true" className="ml-2 text-base">↗</span>}<span className="sr-only">{entry.points?.length ? ' 상세 보기, 새 탭' : ' 사이트 보기, 새 탭'}</span></a></h3>
                   ) : (
                     <h3 className="text-lg font-semibold tracking-[-0.035em] sm:text-xl">{entry.title}</h3>
                   )}
                   <EntryContent entry={entry} />
                 </div>
                 {Boolean(entry.points?.length) && <a className="pf-more pf-mono inline-flex min-h-11 items-start whitespace-nowrap pt-1 text-[11px] font-semibold uppercase tracking-[0.08em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222]" href={workHref(entry)} target="_blank" rel="noopener noreferrer" aria-label={`${entry.title} 더 보기, 새 탭`}>More <span aria-hidden="true">↗</span></a>}
-                {entry.image && <figure className="col-span-2 mt-6 block max-w-[46rem]"><img src={imageHref(entry.image)} alt={`${entry.title} 화면 구성 예시`} loading="lazy" className="w-full border border-[#e5e5e5]" /></figure>}
+                {entry.image && <figure className="col-span-2 mt-6 block max-w-[46rem]"><PortfolioImage src={imageHref(entry.image)} alt={`${entry.title} 화면 구성 예시`} className="w-full border border-[#e5e5e5]" /></figure>}
+                {entry.images && <div className="col-span-2 max-w-[64rem]"><PortfolioGallery images={entry.images} title={entry.title} /></div>}
                 {entry.component && <div className="col-span-2 mt-6 max-w-[46rem]"><ComponentPreview name={entry.component} /></div>}
               </article>
             </li>
@@ -132,6 +176,7 @@ function IndexPage() {
           <nav className="pf-top-nav -mx-6 overflow-x-auto px-6 sm:-mx-10 sm:px-10 lg:mx-0 lg:flex-1 lg:px-0" aria-label="포트폴리오 목차">
             <ul className="flex min-w-max items-center gap-6 lg:justify-end">
               {visibleCategories.map((category) => <li key={category.id}><a href={`#${category.id}`} className="pf-nav-link inline-flex min-h-9 items-center border-b-2 border-transparent text-xs font-medium whitespace-nowrap hover:border-[#222] hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{category.title}</a></li>)}
+              <li className="border-l border-[#d9d9d9] pl-6"><a href="https://github.com/gaengkun" target="_blank" rel="noopener noreferrer" className="pf-nav-link inline-flex min-h-9 items-center border-b-2 border-transparent text-xs font-medium whitespace-nowrap hover:border-[#222] hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">GitHub <span aria-hidden="true" className="ml-1">↗</span><span className="sr-only">프로필, 새 탭</span></a></li>
             </ul>
           </nav>
         </div>
@@ -142,10 +187,6 @@ function IndexPage() {
           <p className="pf-mono mb-6 text-xs font-semibold tracking-[0.12em] text-[#222]">웹 퍼블리셔 · 프론트엔드 개발자</p>
           <h1 className="pf-heading max-w-[58rem] text-[clamp(3.2rem,7vw,6rem)] leading-[1.08] tracking-[-0.07em]">화면을 만들고,<br />기능을 연결하다<span className="text-[#222]">.</span></h1>
           <p className="mt-7 max-w-[42rem] text-base leading-8 text-[#555] sm:text-lg">반응형 웹과 공통 UI 컴포넌트 구축, API 연동과 상태 관리 등 퍼블리싱·프론트엔드 개발 경험을 정리했습니다.</p>
-          <p className="mt-6 max-w-[47rem] border-l-2 border-[#222] pl-4 text-sm leading-7 text-[#555] sm:text-base">
-            <strong className="mb-1 block font-semibold text-[#222]">매일 배우고, 포트폴리오에 기록합니다.</strong>
-            학습과 실무 경험을 되짚으며, 배운 내용을 UI 구현과 코드 예제로 정리해 이 포트폴리오를 꾸준히 업데이트하고 있습니다.
-          </p>
         </div>
 
         <div className="space-y-20 sm:space-y-28">
@@ -192,7 +233,7 @@ function DetailPage({ id }: { id: string }) {
         <p className="pf-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#222]">{category.title} / Work note</p>
         <h1 className="pf-heading mt-7 max-w-[55rem] text-[clamp(3rem,8vw,6rem)] leading-[1.1] tracking-[-0.07em]">{entry.title}</h1>
         <p className="mt-8 max-w-[42rem] text-lg leading-8 text-[#555] sm:text-xl">{entry.description}</p>
-        {entry.image && <figure className="mt-14"><img src={imageHref(entry.image)} alt={`${entry.title} 작업 화면`} className="w-full border border-[#d9d9d9]" /></figure>}
+        {entry.image && <figure className="mt-14"><PortfolioImage src={imageHref(entry.image)} alt={`${entry.title} 작업 화면`} className="w-full border border-[#d9d9d9]" /></figure>}
         <div className="mt-20 grid gap-8 border-t border-[#222] pt-8 sm:grid-cols-[12rem_1fr] sm:gap-10">
           <h2 className="pf-mono text-xs font-bold uppercase tracking-[0.12em]">Overview</h2>
           <div className="max-w-[38rem] space-y-5 text-[15px] leading-8 text-[#444]">
