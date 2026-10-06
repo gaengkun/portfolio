@@ -60,7 +60,7 @@ function EntryContent({ entry }: { entry: PortfolioEntry }) {
         </div>
         {entry.experience && (
           <section className="mt-6 border-t border-[#ddd] pt-5">
-            <h4 className="text-sm font-semibold text-[#222]">기술 스택별 실무 경력</h4>
+            <h4 className="text-sm font-semibold text-[#222]">최근 주요 실무 환경</h4>
             <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[15px] leading-7 text-[#444]">
               {entry.experience.map((item) => <li key={item}>{item}</li>)}
             </ul>

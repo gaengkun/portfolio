@@ -33,14 +33,14 @@ export const portfolioCategories: PortfolioCategory[] = [
         title: '자기소개',
         intro: [
           '웹에이전시에서 커리어를 시작했습니다.',
-          '웹디자인 2년, 웹퍼블리셔 10년 이상의 경험이 있습니다.',
+          '10년 이상의 웹 퍼블리싱 경험이 있으며, 웹디자인 실무도 2년간 경험했습니다.',
         ],
-        description: '최근 5년 동안은 퍼블리싱 업무와 프론트엔드 개발을 병행했습니다.',
+        description: '이 경험을 바탕으로, 최근 5년간 프론트엔드 개발까지 업무 범위를 확장해왔습니다.',
         experience: [
-          'JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트엔드 업무 약 2년',
-          'React 프론트엔드 개발 1년',
-          'Next.js 기반 프론트 UI 개발 약 6개월',
-          'Vue 3 기반 퍼블리싱 약 1년 6개월',
+          'JavaScript·jQuery·REST API 기반 퍼블리싱 및 프론트엔드 개발',
+          'React 기반 퍼블리싱 및 프론트엔드 개발',
+          'Next.js 기반 사용자·관리자 UI 및 서비스 기능 개발',
+          'Vue 3 기반 웹앱 퍼블리싱 및 UI 컴포넌트 커스텀',
         ],
       },
       {
