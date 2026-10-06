@@ -172,11 +172,11 @@ function IndexPage() {
     <div className="pf-shell min-h-screen">
       <header id="contents" className="sticky top-0 z-50 border-b border-[#d9d9d9] bg-[#fff]/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-6 py-4 sm:px-10 lg:flex-row lg:items-center lg:gap-10 lg:px-14">
-          <a href="#top" className="pf-mono shrink-0 text-xs font-bold tracking-[0.16em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">GAENGKUN / PORTFOLIO</a>
+          <a href="#top" className="pf-mono shrink-0 text-xs font-bold tracking-[0.16em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">SEOWOOCHAN / PORTFOLIO</a>
           <nav className="pf-top-nav -mx-6 overflow-x-auto px-6 sm:-mx-10 sm:px-10 lg:mx-0 lg:flex-1 lg:px-0" aria-label="포트폴리오 목차">
             <ul className="flex min-w-max items-center gap-6 lg:justify-end">
               {visibleCategories.map((category) => <li key={category.id}><a href={`#${category.id}`} className="pf-nav-link inline-flex min-h-9 items-center border-b-2 border-transparent text-xs font-medium whitespace-nowrap hover:border-[#222] hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{category.title}</a></li>)}
-              <li className="border-l border-[#d9d9d9] pl-6"><a href="https://github.com/gaengkun" target="_blank" rel="noopener noreferrer" className="pf-nav-link inline-flex min-h-9 items-center border-b-2 border-transparent text-xs font-medium whitespace-nowrap hover:border-[#222] hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">GitHub <span aria-hidden="true" className="ml-1">↗</span><span className="sr-only">프로필, 새 탭</span></a></li>
+              <li className="border-l border-[#d9d9d9] pl-6"><a href="https://github.com/gaengkun" target="_blank" rel="noopener noreferrer" className="pf-nav-link inline-flex min-h-9 items-center border-b-2 border-transparent text-xs font-medium whitespace-nowrap hover:border-[#222] hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Gaengkun GitHub <span aria-hidden="true" className="ml-1">↗</span><span className="sr-only">프로필, 새 탭</span></a></li>
             </ul>
           </nav>
         </div>
@@ -196,8 +196,8 @@ function IndexPage() {
 
       <footer className="border-t border-[#d9d9d9]">
         <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-6 py-7 text-xs text-[#777] sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
-          <span className="pf-mono uppercase tracking-[0.1em]">gaengkun · Portfolio index</span>
-          <a href="https://github.com/gaengkun" target="_blank" rel="noopener noreferrer" className="w-fit border-b border-[#777] pb-0.5 hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3">GitHub 프로필 ↗ <span className="sr-only">새 탭</span></a>
+          <span className="pf-mono uppercase tracking-[0.1em]">SEOWOOCHAN · Portfolio index</span>
+          <a href="https://github.com/gaengkun" target="_blank" rel="noopener noreferrer" className="w-fit border-b border-[#777] pb-0.5 hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3">Gaengkun GitHub ↗ <span className="sr-only">새 탭</span></a>
         </div>
       </footer>
     </div>
@@ -208,7 +208,7 @@ function DetailPage({ id }: { id: string }) {
   const found = findPortfolioEntry(id)
 
   useEffect(() => {
-    document.title = found ? `${found.entry.title} — gaengkun` : '작업을 찾을 수 없습니다 — gaengkun'
+    document.title = found ? `${found.entry.title} — SEOWOOCHAN` : '작업을 찾을 수 없습니다 — SEOWOOCHAN'
   }, [found])
 
   if (!found) {
@@ -226,7 +226,7 @@ function DetailPage({ id }: { id: string }) {
   return (
     <div className="pf-shell min-h-screen">
       <header className="mx-auto flex max-w-[1080px] items-center justify-between border-b border-[#d9d9d9] px-6 py-5 sm:px-10">
-        <a href={import.meta.env.BASE_URL} className="pf-mono text-xs font-bold tracking-[0.16em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">GAENGKUN / PORTFOLIO</a>
+        <a href={import.meta.env.BASE_URL} className="pf-mono text-xs font-bold tracking-[0.16em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">SEOWOOCHAN / PORTFOLIO</a>
         <a href={import.meta.env.BASE_URL} className="pf-mono text-[11px] uppercase tracking-[0.1em] text-[#777] hover:text-[#222]">← 목차로</a>
       </header>
       <main className="mx-auto max-w-[1080px] px-6 pb-28 pt-20 sm:px-10 sm:pt-28">
