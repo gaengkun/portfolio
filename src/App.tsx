@@ -146,8 +146,8 @@ function SectionList({ category }: { category: PortfolioCategory }) {
       <ul className="mt-10 border-t border-[#e5e5e5]">
           {category.entries.map((entry) => (
             <li key={entry.id} className="pf-work-row border-b border-[#e5e5e5]">
-              <article className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 px-4 py-6 sm:gap-x-6 sm:py-7">
-                <div className="min-w-0">
+              <article className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 px-0 py-6 sm:gap-x-6 sm:px-4 sm:py-7">
+                <div className={`min-w-0${entry.points?.length ? '' : ' col-span-2'}`}>
                   {entry.points?.length || entry.url ? (
                     <h3 className="text-lg font-semibold tracking-[-0.035em] sm:text-xl"><a className="pf-work-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222]" href={entry.points?.length ? workHref(entry) : entry.url} target="_blank" rel="noopener noreferrer">{entry.title}{entry.url && !entry.points?.length && <span aria-hidden="true" className="ml-2 text-base">↗</span>}<span className="sr-only">{entry.points?.length ? ' 상세 보기, 새 탭' : ' 사이트 보기, 새 탭'}</span></a></h3>
                   ) : (
@@ -170,10 +170,10 @@ function SectionList({ category }: { category: PortfolioCategory }) {
 function IndexPage() {
   return (
     <div className="pf-shell min-h-screen">
-      <header id="contents" className="sticky top-0 z-50 border-b border-[#d9d9d9] bg-[#fff]/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-6 py-4 sm:px-10 lg:flex-row lg:items-center lg:gap-10 lg:px-14">
+      <header id="contents" className="pf-header sticky top-0 z-50 border-b border-[#d9d9d9] bg-[#fff]/95 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-4 py-4 sm:px-10 lg:flex-row lg:items-center lg:gap-10 lg:px-14">
           <a href="#top" className="pf-mono shrink-0 text-xs font-bold tracking-[0.16em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">SEOWOOCHAN / PORTFOLIO</a>
-          <nav className="pf-top-nav -mx-6 overflow-x-auto px-6 sm:-mx-10 sm:px-10 lg:mx-0 lg:flex-1 lg:px-0" aria-label="포트폴리오 목차">
+          <nav className="pf-top-nav -mx-4 min-w-0 overflow-x-auto px-4 py-1 sm:-mx-10 sm:px-10 lg:mx-0 lg:flex-1 lg:px-0" aria-label="포트폴리오 목차">
             <ul className="flex min-w-max items-center gap-6 lg:justify-end">
               {visibleCategories.map((category) => <li key={category.id}><a href={`#${category.id}`} className="pf-nav-link inline-flex min-h-9 items-center border-b-2 border-transparent text-xs font-medium whitespace-nowrap hover:border-[#222] hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{category.title}</a></li>)}
               <li className="border-l border-[#d9d9d9] pl-6"><a href="https://github.com/gaengkun" target="_blank" rel="noopener noreferrer" className="pf-nav-link inline-flex min-h-9 items-center border-b-2 border-transparent text-xs font-medium whitespace-nowrap hover:border-[#222] hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Gaengkun GitHub <span aria-hidden="true" className="ml-1">↗</span><span className="sr-only">프로필, 새 탭</span></a></li>
@@ -182,7 +182,7 @@ function IndexPage() {
         </div>
       </header>
 
-      <main id="top" className="mx-auto max-w-[1440px] px-6 pb-24 sm:px-10 lg:px-14">
+      <main id="top" className="mx-auto max-w-[1440px] px-4 pb-24 sm:px-10 lg:px-14">
         <div className="pb-16 pt-14 sm:pb-20 sm:pt-20 lg:pb-24 lg:pt-24">
           <p className="pf-mono mb-6 text-xs font-semibold tracking-[0.12em] text-[#222]">웹 퍼블리셔 · 프론트엔드 개발자</p>
           <h1 className="pf-heading max-w-[58rem] text-[clamp(3.2rem,7vw,6rem)] leading-[1.08] tracking-[-0.07em]">화면을 만들고,<br />기능을 연결하다<span className="text-[#222]">.</span></h1>
@@ -195,7 +195,7 @@ function IndexPage() {
       </main>
 
       <footer className="border-t border-[#d9d9d9]">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-6 py-7 text-xs text-[#777] sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-4 py-7 text-xs text-[#777] sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
           <span className="pf-mono uppercase tracking-[0.1em]">SEOWOOCHAN · Portfolio index</span>
           <a href="https://github.com/gaengkun" target="_blank" rel="noopener noreferrer" className="w-fit border-b border-[#777] pb-0.5 hover:text-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3">Gaengkun GitHub ↗ <span className="sr-only">새 탭</span></a>
         </div>
@@ -213,7 +213,7 @@ function DetailPage({ id }: { id: string }) {
 
   if (!found) {
     return (
-      <main className="pf-shell flex min-h-screen flex-col items-start justify-center px-6 sm:px-12">
+      <main className="pf-shell flex min-h-screen flex-col items-start justify-center px-4 sm:px-12">
         <p className="pf-mono text-xs uppercase tracking-[0.16em] text-[#222]">Page not found</p>
         <h1 className="pf-heading mt-4 text-5xl tracking-[-0.06em]">작업을 찾을 수 없습니다.</h1>
         <a className="mt-8 border-b border-current pb-1 text-sm" href={import.meta.env.BASE_URL}>목차로 돌아가기 ↗</a>
@@ -225,11 +225,11 @@ function DetailPage({ id }: { id: string }) {
 
   return (
     <div className="pf-shell min-h-screen">
-      <header className="mx-auto flex max-w-[1080px] items-center justify-between border-b border-[#d9d9d9] px-6 py-5 sm:px-10">
+      <header className="mx-auto flex max-w-[1080px] items-center justify-between border-b border-[#d9d9d9] px-4 py-5 sm:px-10">
         <a href={import.meta.env.BASE_URL} className="pf-mono text-xs font-bold tracking-[0.16em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">SEOWOOCHAN / PORTFOLIO</a>
         <a href={import.meta.env.BASE_URL} className="pf-mono text-[11px] uppercase tracking-[0.1em] text-[#777] hover:text-[#222]">← 목차로</a>
       </header>
-      <main className="mx-auto max-w-[1080px] px-6 pb-28 pt-20 sm:px-10 sm:pt-28">
+      <main className="mx-auto max-w-[1080px] px-4 pb-28 pt-20 sm:px-10 sm:pt-28">
         <p className="pf-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#222]">{category.title} / Work note</p>
         <h1 className="pf-heading mt-7 max-w-[55rem] text-[clamp(3rem,8vw,6rem)] leading-[1.1] tracking-[-0.07em]">{entry.title}</h1>
         <p className="mt-8 max-w-[42rem] text-lg leading-8 text-[#555] sm:text-xl">{entry.description}</p>

@@ -10,7 +10,12 @@
 }
 
 html { scroll-behavior: smooth; }
-body { min-width: 320px; margin: 0; }
+body {
+  min-width: 320px;
+  margin: 0;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
 button, a { -webkit-tap-highlight-color: transparent; }
 
 .pf-shell { background: #fff; }
@@ -19,6 +24,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .pf-work-row { transition: background-color 150ms ease; }
 .pf-work-row:hover { background: #f5f5f5; }
 .pf-work-link:hover, .pf-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pf-header { padding-top: env(safe-area-inset-top, 0px); }
+.pf-section { scroll-margin-top: calc(8rem + env(safe-area-inset-top, 0px)); }
 .pf-top-nav { scrollbar-width: none; }
 .pf-top-nav::-webkit-scrollbar { display: none; }
 
